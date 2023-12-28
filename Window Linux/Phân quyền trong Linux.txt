@@ -1,0 +1,20 @@
+Trong hệ thống tệp Linux, các số từ 0 đến 7 đại diện cho các quyền truy cập khác nhau. Dưới đây là ý nghĩa của từng số trong dãy phân quyền:
+
+0: Không có quyền truy cập (No access)
+1: Quyền thực thi (Execute only)
+2: Quyền ghi (Write only)
+3: Quyền ghi và thực thi (Write and execute)
+4: Quyền đọc (Read only)
+5: Quyền đọc và thực thi (Read and execute)
+6: Quyền đọc và ghi (Read and write)
+7: Quyền đọc, ghi và thực thi (Read, write, and execute)
+
+Các runlevel thông thường có thể bao gồm:
+
+Runlevel 0: Chế độ tắt hệ thống. Hệ thống sẽ được tắt hoàn toàn.
+Runlevel 1 hoặc S: Chế độ đơn người dùng (single-user mode). Chế độ này thường được sử dụng cho việc bảo trì hệ thống, không có nhiều dịch vụ được khởi động.
+Runlevel 2: Chế độ đa người dùng nhưng không bao gồm mạng.
+Runlevel 3: Chế độ đa người dùng với mạng. Trong môi trường server, runlevel này thường được sử dụng.
+Runlevel 4: Không phải lựa chọn chuẩn trong hầu hết các bản phân phối Linux và thường được sử dụng cho các mục đích tùy chỉnh.
+Runlevel 5: Chế độ đồ họa, trong đó hệ thống chạy môi trường đồ họa như X Window System (X11) và các môi trường desktop.
+Runlevel 6: Chế độ khởi động lại hệ thống. Hệ thống sẽ được khởi động lại.

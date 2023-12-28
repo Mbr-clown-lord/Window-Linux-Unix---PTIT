@@ -1,0 +1,7 @@
+Hệ điều hành(11/11)
+Windows Linux(16/11)
+Kiểm thử xâm nhập(21/11)
+OOP(23/11)
+Cơ sở dữ liệu(25/11)
+Cơ sở an toàn thông tin
+Thuyết trình hệ điều hành

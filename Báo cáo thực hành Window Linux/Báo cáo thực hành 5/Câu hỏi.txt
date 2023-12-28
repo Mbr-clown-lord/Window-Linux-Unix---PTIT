@@ -1,0 +1,27 @@
+Giải thích cơ bản về tấn công tràn bộ đệm là gì?
+
+Trả lời: Tấn công tràn bộ đệm là kỹ thuật tận dụng lỗi lập trình cho phép gửi dữ liệu vượt quá giới hạn bộ đệm, làm tràn vào vùng nhớ và thực thi mã độc hại hoặc thay đổi dòng điều khiển của chương trình.
+
+Đặc điểm chính của một lỗ hổng tràn bộ đệm là gì?
+
+Trả lời: Lỗ hổng tràn bộ đệm thường xuất hiện khi chương trình không kiểm tra độ dài dữ liệu đầu vào, cho phép dữ liệu vượt quá bộ nhớ đệm được cấp phát, ghi đè lên các vùng nhớ khác hoặc thực thi mã độc hại.
+
+Giải thích cơ chế hoạt động của tấn công tràn bộ đệm dựa trên stack?
+
+Trả lời: Trong tấn công tràn bộ đệm dựa trên stack, việc gửi dữ liệu lớn hơn kích thước bộ đệm cho phép kẻ tấn công ghi đè lên vùng nhớ stack bao gồm địa chỉ trả về, thay đổi luồng điều khiển của chương trình.
+
+Cách phòng tránh tấn công tràn bộ đệm là gì?
+
+Trả lời: Có thể áp dụng các biện pháp như sử dụng các hàm an toàn như fgets() thay vì gets(), kiểm tra và giới hạn độ dài dữ liệu đầu vào, sử dụng kỹ thuật bảo vệ như canaries hay DEP (Data Execution Prevention).
+
+Tại sao việc kiểm soát độ dài đầu vào là quan trọng trong ngăn chặn tấn công tràn bộ đệm?
+
+Trả lời: Kiểm soát độ dài đầu vào giúp ngăn chặn việc gửi dữ liệu quá lớn, từ đó tránh được việc ghi đè lên vùng nhớ không mong muốn và thực thi mã độc hại.
+
+Các công cụ hoặc kỹ thuật phổ biến nào có thể được sử dụng để phân tích và khai thác lỗ hổng tràn bộ đệm?
+
+Trả lời: Có thể sử dụng GDB để gỡ lỗi chương trình, các công cụ như Metasploit để tạo payload và khai thác lỗ hổng, valgrind để phát hiện lỗ hổng bộ nhớ, và các công cụ khác như Immunity Debugger, OllyDbg.
+
+Tại sao tấn công tràn bộ đệm vẫn là một mối đe dọa lớn trong bảo mật hệ thống?
+
+Trả lời: Tấn công tràn bộ đệm vẫn nguy hiểm vì lỗ hổng này có thể dẫn đến việc thực thi mã độc hại, kiểm soát chương trình, thậm chí kiểm soát toàn bộ hệ thống nếu không được xử lý kịp thời và hiệu quả.

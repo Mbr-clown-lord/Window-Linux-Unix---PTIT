@@ -1,0 +1,12 @@
+1. Import module Active Directory PowerShell bằng lệnh:
+	Import-Module ActiveDirectory
+2. Sử dụng lệnh Get-ADOrganizationalUnit để tìm kiếm OU cần xóa 
+	$ou = Get-ADOrganizationalUnit -Filter 'Name -eq "tên OU"'
+3. Kiểm tra lại kết quả đảm bảo rằng OU đã được tìm thấy:
+	$ou
+4. Nếu Ou được bảo vệ khỏi xóa tình cờ, bạn cần tắt tình năng này trước khi xóa OU:
+	+ Sử dụng lệnh Get-ADOrganizationalUnit để tìm kiếm OU 
+	+ Sử dụng lệnh Set-ADOrganizationalUnit để tắt tính năng bảo vệ OU khỏi xóa tình cờ
+		Set-ADOrganizationalUnit -Identity $ou -ProtectedFromAccidentalDeletion $false
+5. Chạy lệnh Remove-ADOrganizationalUnit để xóa OU
+	Remove-ADOrganizationalUnit -Identity $ou -Confirm:$false

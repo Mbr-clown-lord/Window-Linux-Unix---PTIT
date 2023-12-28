@@ -1,0 +1,12 @@
+Asan (AddressSanitizer) là một công cụ mạnh mẽ để phát hiện và gỡ lỗi lỗ hổng tràn bộ đệm trong mã nguồn C/C++. Tuy nhiên, cũng có một số lỗ hổng tràn bộ đệm đặc biệt mà Asan không thể phát hiện ra mà bạn phải tự phát hiện bằng cách viết mã:
+
+1. Tràn bộ đệm không gian heap chỉ là một phần của vùng nhớ được cấp phát động. Asan tập trung vào theo dõi vùng nhớ stack và các biến toàn cục, nên nó có thể bỏ qua các tràn bộ đệm xảy ra trong vùng nhớ heap.
+
+2. Các lỗ hổng tràn bộ đệm xảy ra trong các phép gán không an toàn hoặc xử lý chuỗi không an toàn. Asan chủ yếu tập trung vào việc theo dõi truy cập đến mảng và con trỏ, nên nó có thể không phát hiện được các lỗi tràn bộ đệm xảy ra trong các phép gán hoặc xử lý chuỗi không an toàn như `strcpy` hoặc `strcat`.
+
+3. Lỗi tràn bộ đệm xảy ra ở các đối tượng không phải kiểu mảng. Asan chủ yếu tập trung vào việc theo dõi các truy cập mảng, nên nó có thể bỏ qua các lỗi tràn bộ đệm xảy ra ở các đối tượng không phải kiểu mảng như cấu trúc dữ liệu.
+
+4. Lỗi tràn bộ đệm xảy ra trong phần mã không được biên dịch với Asan. Asan chỉ có thể phát hiện lỗi tràn bộ đệm trong phần mã đã được biên dịch với Asan, nên nó không thể phát hiện lỗi trong các thư viện bên ngoài hoặc phần mã không được biên dịch với Asan.
+
+Vì những hạn chế này, có thể cần phải sử dụng các phương pháp khác nhau để phát hiện các lỗ hổng tràn bộ đệm không được Asan phát hiện. Các phương pháp bao gồm phân tích tĩnh, kiểm tra mã bằng tay, sử dụng công cụ phân tích mã nguồn tĩnh, hoặc viết mã kiểm tra mở rộng để theo dõi và phát hiện các lỗi tràn bộ đệm cụ thể.
+clang -fsanitize=address -fno-omit-frame-pointer -o executable source_code.c
